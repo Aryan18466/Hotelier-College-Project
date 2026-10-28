@@ -1,0 +1,295 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'react-toastify/dist/ReactToastify.css';
+
+:root {
+  --primary-gold: #c5a880;
+  --primary-gold-dark: #ab8d64;
+  --primary-gold-light: #f4eee5;
+  --primary-charcoal: #1e2022;
+  --secondary-charcoal: #2d3033;
+  --body-bg: #faf9f6;
+  --card-bg: #ffffff;
+  --text-primary: #1e2022;
+  --text-muted: #6c757d;
+  --accent-cream: #f7f5f0;
+  --border-color: #e8e3d9;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.09);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--body-bg);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--primary-charcoal);
+}
+
+.brand-font {
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+}
+
+/* Luxury Gold & Outline Buttons */
+.btn-gold {
+  background-color: var(--primary-gold);
+  color: #ffffff;
+  border: 1px solid var(--primary-gold);
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-gold:hover, .btn-gold:focus {
+  background-color: var(--primary-gold-dark);
+  border-color: var(--primary-gold-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(197, 168, 128, 0.35);
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--primary-gold-dark);
+  border: 1.5px solid var(--primary-gold);
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--primary-gold);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-charcoal {
+  background-color: var(--primary-charcoal);
+  color: #ffffff;
+  border: 1px solid var(--primary-charcoal);
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.btn-charcoal:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Card Styling */
+.luxury-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.luxury-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Badges */
+.badge-gold {
+  background-color: var(--primary-gold-light);
+  color: var(--primary-gold-dark);
+  font-weight: 600;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+}
+
+.badge-status {
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-status-confirmed {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.badge-status-pending {
+  background-color: #fef7e0;
+  color: #b06000;
+}
+
+.badge-status-cancelled {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+.badge-status-checked_in {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+.badge-status-checked_out {
+  background-color: #f1f3f4;
+  color: #5f6368;
+}
+
+/* Navbar */
+.luxury-navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 0;
+  transition: all 0.3s ease;
+}
+
+.luxury-navbar .nav-link {
+  color: var(--primary-charcoal);
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.luxury-navbar .nav-link:hover,
+.luxury-navbar .nav-link.active {
+  color: var(--primary-gold-dark);
+}
+
+/* Hero Section */
+.hero-wrapper {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(18, 20, 24, 0.65) 0%, rgba(18, 20, 24, 0.85) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Search Floating Box */
+.search-floating-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  margin-top: -3.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* Dashboard Sidebar */
+.dashboard-sidebar {
+  background: #ffffff;
+  border-right: 1px solid var(--border-color);
+  min-height: calc(100vh - 72px);
+  padding: 1.5rem 1rem;
+}
+
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #495057;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-nav-link:hover {
+  background: var(--primary-gold-light);
+  color: var(--primary-gold-dark);
+}
+
+.sidebar-nav-link.active {
+  background: var(--primary-charcoal);
+  color: #ffffff;
+}
+
+.sidebar-nav-link.active svg {
+  color: var(--primary-gold);
+}
+
+/* Form Controls */
+.form-control, .form-select {
+  border: 1px solid #ced4da;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 0.2rem rgba(197, 168, 128, 0.25);
+}
+
+/* Skeletons */
+.skeleton-box {
+  background: linear-gradient(90deg, #f0ede6 25%, #f9f7f3 50%, #f0ede6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Invoice Printable */
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .invoice-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}
